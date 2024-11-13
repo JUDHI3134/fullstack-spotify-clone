@@ -36,7 +36,7 @@ const listAlbum = async(req,res) =>{
 const removeAlbum = async(req,res) =>{
     try {
      await albumModel.findByIdAndDelete(req.body.id);
-     res.json({success: true, message: "song removed"})
+     res.json({success: true, message: "Album removed"})
    } catch (error) {
     res.json({success: false, message: error})
   }
