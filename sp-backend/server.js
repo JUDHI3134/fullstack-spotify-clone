@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import "dotenv/config"
+import songRouter from "./src/routes/songRoute.js";
 
 //app config
 const app = express();
@@ -13,6 +14,9 @@ app.use(cors())
 //initializing routes
 
 app.get("/",(req,res)=> res.send("Api Working"));
+
+//initializing routes
+app.use("/api/song",songRouter)
 
 
 app.listen(port,()=>{
